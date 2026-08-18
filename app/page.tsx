@@ -1,11 +1,11 @@
-import Image from "next/image";
-import {Button} from "@/components/ui/button";
+import { connectToDatabase } from "@/lib/db";
 
-export default function Home() {
+export default async function Home() {
+  await connectToDatabase(); // <-- Triggers the connection on page load
+
   return (
-      <div>
-        <h1>home</h1>
-        <Button>Click me</Button>
-      </div>
+    <main>
+      <h1>CodeForge</h1>
+    </main>
   );
 }
